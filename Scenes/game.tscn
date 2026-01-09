@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://caxrlyi8gllah"]
+[gd_scene load_steps=13 format=3 uid="uid://caxrlyi8gllah"]
 
 [ext_resource type="PackedScene" uid="uid://ceppxs366bklm" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://bo3020idf4pbq" path="res://Scripts/player.gd" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://b2fv0bvgk4i8u" path="res://Assets/sprites/world_tileset.png" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://cp6788rau4lml" path="res://Scenes/platform.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://ba8msccgfom08" path="res://Scenes/killzone.tscn" id="4_i6g32"]
+[ext_resource type="PackedScene" uid="uid://drt8r0pwx31o" path="res://Scenes/coin.tscn" id="5_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("3_wrm1d")
@@ -171,6 +173,8 @@ texture = ExtResource("3_wrm1d")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3dryh")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+
 [sub_resource type="Animation" id="Animation_3dryh"]
 resource_name = "move"
 length = 1.5
@@ -210,6 +214,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+position = Vector2(8, -1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wowpa")
@@ -223,7 +228,16 @@ script = ExtResource("2_qxrlw")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -9)
 zoom = Vector2(4, 4)
+limit_bottom = 144
 position_smoothing_enabled = true
+
+[node name="Killzone" parent="Player" instance=ExtResource("4_i6g32")]
+position = Vector2(40, 93)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Killzone"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
 
 [node name="Platform" parent="." instance=ExtResource("4_3dryh")]
 position = Vector2(64, 34)
@@ -237,3 +251,18 @@ libraries = {
 &"": SubResource("AnimationLibrary_i6g32")
 }
 autoplay = "move"
+
+[node name="Coin" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(104, 89)
+
+[node name="Coin2" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(136, -24)
+
+[node name="Coin3" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(376, 56)
+
+[node name="Coin4" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(536, 56)
+
+[node name="Coin5" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(584, 88)
