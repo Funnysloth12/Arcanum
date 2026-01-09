@@ -173,8 +173,6 @@ texture = ExtResource("3_wrm1d")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3dryh")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
-
 [sub_resource type="Animation" id="Animation_3dryh"]
 resource_name = "move"
 length = 1.5
@@ -213,6 +211,8 @@ _data = {
 &"move": SubResource("Animation_3dryh")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+
 [node name="Game" type="Node2D"]
 position = Vector2(8, -1)
 
@@ -230,14 +230,6 @@ position = Vector2(0, -9)
 zoom = Vector2(4, 4)
 limit_bottom = 144
 position_smoothing_enabled = true
-
-[node name="Killzone" parent="Player" instance=ExtResource("4_i6g32")]
-position = Vector2(40, 93)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Killzone"]
-light_mask = 2
-visibility_layer = 2
-shape = SubResource("WorldBoundaryShape2D_1l0tm")
 
 [node name="Platform" parent="." instance=ExtResource("4_3dryh")]
 position = Vector2(64, 34)
@@ -266,3 +258,11 @@ position = Vector2(536, 56)
 
 [node name="Coin5" parent="." instance=ExtResource("5_wowpa")]
 position = Vector2(584, 88)
+
+[node name="Killzone" parent="." instance=ExtResource("4_i6g32")]
+position = Vector2(104, 156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
