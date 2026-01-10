@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://caxrlyi8gllah"]
+[gd_scene load_steps=17 format=3 uid="uid://caxrlyi8gllah"]
 
 [ext_resource type="PackedScene" uid="uid://ceppxs366bklm" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://ceytoxk8kuw44" path="res://Scripts/game_manager.gd" id="1_h4fw4"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dbygp0oexe180" path="res://Scripts/slime_green.tscn" id="7_1l0tm"]
 [ext_resource type="FontFile" uid="uid://3rc3lct8dav0" path="res://Assets/fonts/PixelOperator8.ttf" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://cfaa5jt6gjeo5" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="9_ldgsr"]
-[ext_resource type="AudioStream" uid="uid://c004vyk3pyvdq" path="res://Assets/music/time_for_adventure.mp3" id="11_o5yvi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("3_wrm1d")
@@ -348,7 +347,3 @@ text = "You did it!"
 
 [node name="Slime Green" parent="." instance=ExtResource("7_1l0tm")]
 position = Vector2(624, 96)
-
-[node name="music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_o5yvi")
-autoplay = true
