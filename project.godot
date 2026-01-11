@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Arcanum"
-run/main_scene="uid://caxrlyi8gllah"
+run/main_scene="uid://ckgserc67rfp4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [audio]
