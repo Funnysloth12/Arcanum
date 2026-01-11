@@ -365,7 +365,7 @@ position = Vector2(632, 95)
 position = Vector2(175, 15)
 
 [node name="fade_transiton" parent="." instance=ExtResource("11_rku1e")]
-offset_left = 3287.0
-offset_top = -1661.0
-offset_right = 4541.0
-offset_bottom = -969.0
+offset_left = 3546.0
+offset_top = -1707.0
+offset_right = 6273.0
+offset_bottom = 37.0

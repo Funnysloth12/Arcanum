@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dj82loqswaij8" path="res://Scenes/fade_transiton.tscn" id="6_opfnp"]
 
 [node name="main menu" type="Node2D"]
-position = Vector2(615, 340)
+position = Vector2(1006, 500)
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_28flt")
 
@@ -74,10 +74,10 @@ offset_bottom = 529.33344
 
 [node name="background" type="TextureRect" parent="."]
 z_index = -1655
-offset_left = -1033.3334
-offset_top = -508.00006
-offset_right = -633.3334
-offset_bottom = -108.00006
+offset_left = -1513.333
+offset_top = -764.00006
+offset_right = -882.0144
+offset_bottom = -112.46466
 scale = Vector2(4.853333, 2.4966667)
 mouse_filter = 2
 texture = ExtResource("6_cp0ys")

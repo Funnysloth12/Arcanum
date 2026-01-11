@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://df334l5y1s1xq"]
+[gd_scene load_steps=3 format=3 uid="uid://df334l5y1s1xq"]
 
-[node name="Options" type="Node2D"]
+[ext_resource type="Script" uid="uid://c71p2u7w02p6m" path="res://Scenes/options.gd" id="1_prnvy"]
+[ext_resource type="FontFile" uid="uid://3rc3lct8dav0" path="res://Assets/fonts/PixelOperator8.ttf" id="2_4tmxy"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_prnvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1764.0
+offset_bottom = 1033.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="volume lable" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4tmxy")
+theme_override_font_sizes/font_size = 18
+text = "Volume"
+
+[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4tmxy")
+text = "Mute:"
+
+[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4tmxy")
+theme_override_font_sizes/font_size = 16
+
+[node name="resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 0
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/resolutions" to="." method="_on_resolutions_item_selected"]
