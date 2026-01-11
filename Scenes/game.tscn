@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://caxrlyi8gllah"]
+[gd_scene load_steps=19 format=3 uid="uid://caxrlyi8gllah"]
 
 [ext_resource type="PackedScene" uid="uid://ceppxs366bklm" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://ceytoxk8kuw44" path="res://Scripts/game_manager.gd" id="1_h4fw4"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dbygp0oexe180" path="res://Scenes/slime_green.tscn" id="7_1l0tm"]
 [ext_resource type="FontFile" uid="uid://3rc3lct8dav0" path="res://Assets/fonts/PixelOperator8.ttf" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://cfaa5jt6gjeo5" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="9_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://dj82loqswaij8" path="res://Scenes/fade_transiton.tscn" id="11_rku1e"]
+[ext_resource type="Script" uid="uid://bxjbnyueou0ej" path="res://Scenes/fade_transiton.gd" id="12_rfjv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
 texture = ExtResource("3_wrm1d")
@@ -264,6 +266,9 @@ shape = SubResource("WorldBoundaryShape2D_1l0tm")
 
 [node name="Coins" type="Node" parent="."]
 
+[node name="Coin10" parent="Coins" instance=ExtResource("5_wowpa")]
+position = Vector2(560, -91)
+
 [node name="Coin2" parent="Coins" instance=ExtResource("5_wowpa")]
 position = Vector2(144, -25)
 
@@ -287,6 +292,12 @@ position = Vector2(851, -10)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("5_wowpa")]
 position = Vector2(640, -88)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("5_wowpa")]
+position = Vector2(256, -10)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("5_wowpa")]
+position = Vector2(608, 88)
 
 [node name="Platforms" type="Node" parent="."]
 
@@ -346,17 +357,13 @@ theme_override_fonts/font = ExtResource("8_v158k")
 theme_override_font_sizes/font_size = 8
 text = "You did it!"
 
-[node name="Slime Green" parent="." instance=ExtResource("7_1l0tm")]
-position = Vector2(624, 96)
+[node name="Slimes" type="Node" parent="."]
 
-[node name="Coin" parent="." instance=ExtResource("5_wowpa")]
-position = Vector2(248, -9)
+[node name="Slime Green" parent="Slimes" instance=ExtResource("7_1l0tm")]
+position = Vector2(632, 95)
 
-[node name="Coin2" parent="." instance=ExtResource("5_wowpa")]
-position = Vector2(552, -90)
+[node name="Slime Green2" parent="Slimes" instance=ExtResource("7_1l0tm")]
+position = Vector2(175, 15)
 
-[node name="Coin3" parent="." instance=ExtResource("5_wowpa")]
-position = Vector2(600, 89)
-
-[node name="Slime Green2" parent="." instance=ExtResource("7_1l0tm")]
-position = Vector2(167, 16)
+[node name="ColorRect" parent="." instance=ExtResource("11_rku1e")]
+script = ExtResource("12_rfjv2")

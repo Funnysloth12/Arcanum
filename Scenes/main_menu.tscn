@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckgserc67rfp4"]
+
+[ext_resource type="Script" uid="uid://c32il2r6ox5vo" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dmmbtcx5s0738" path="res://Assets/Menu/Start-removebg-preview.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dqsbf55lmapdl" path="res://Assets/Menu/Settings-removebg-preview.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://dgv00mkn6mmjv" path="res://Assets/Menu/Quit-removebg-preview.png" id="4_opfnp"]
+[ext_resource type="PackedScene" uid="uid://dj82loqswaij8" path="res://Scenes/fade_transiton.tscn" id="6_opfnp"]
+
+[node name="main menu" type="Node2D"]
+position = Vector2(615, 340)
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_28flt")
+
+[node name="button manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.75, 0.75)
+metadata/_edit_use_anchors_ = true
+
+[node name="start" type="TextureButton" parent="button manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.450001
+anchor_top = 3.3000002
+anchor_right = 17.375
+anchor_bottom = 6.8
+offset_left = -740.0
+offset_top = -579.0
+offset_right = -264.0
+offset_bottom = -420.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2_ce3w2")
+metadata/_edit_use_anchors_ = true
+
+[node name="options" type="TextureButton" parent="button manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.025001
+anchor_top = 4.55
+anchor_right = 9.025001
+anchor_bottom = 4.55
+offset_left = -746.0
+offset_top = -353.0
+offset_right = 40.99997
+offset_bottom = -36.0
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("3_n45e2")
+metadata/_edit_use_anchors_ = true
+
+[node name="quit" type="TextureButton" parent="button manager"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 10.1970005
+anchor_bottom = 4.807
+offset_left = -418.0
+offset_top = 145.0
+offset_right = 42.119995
+offset_bottom = 239.72
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("4_opfnp")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" parent="." instance=ExtResource("6_opfnp")]
+visible = false
+offset_left = -1126.6667
+offset_top = -564.00006
+offset_right = 1333.3335
+offset_bottom = 529.33344
+
+[node name="fade_timer" type="Timer" parent="ColorRect"]
+
+[connection signal="pressed" from="button manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button manager/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button manager/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="ColorRect/fade_timer" to="." method="_on_fade_timer_timeout"]
