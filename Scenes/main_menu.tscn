@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckgserc67rfp4"]
+[gd_scene load_steps=7 format=3 uid="uid://ckgserc67rfp4"]
 
 [ext_resource type="Script" uid="uid://c32il2r6ox5vo" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://dmmbtcx5s0738" path="res://Assets/Menu/Start-removebg-preview.png" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://dqsbf55lmapdl" path="res://Assets/Menu/Settings-removebg-preview.png" id="3_n45e2"]
 [ext_resource type="Texture2D" uid="uid://dgv00mkn6mmjv" path="res://Assets/Menu/Quit-removebg-preview.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dx8wa8qmdndqx" path="res://Assets/Menu/background_img.png" id="6_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://dj82loqswaij8" path="res://Scenes/fade_transiton.tscn" id="6_opfnp"]
 
 [node name="main menu" type="Node2D"]
@@ -70,6 +71,17 @@ offset_right = 1333.3335
 offset_bottom = 529.33344
 
 [node name="fade_timer" type="Timer" parent="fade_transition"]
+
+[node name="background" type="TextureRect" parent="."]
+z_index = -1655
+offset_left = -1033.3334
+offset_top = -508.00006
+offset_right = -633.3334
+offset_bottom = -108.00006
+scale = Vector2(4.853333, 2.4966667)
+mouse_filter = 2
+texture = ExtResource("6_cp0ys")
+stretch_mode = 1
 
 [connection signal="pressed" from="button manager/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="button manager/options" to="." method="_on_options_pressed"]
