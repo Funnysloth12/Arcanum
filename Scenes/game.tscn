@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6788rau4lml" path="res://Scenes/platform.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://ba8msccgfom08" path="res://Scenes/killzone.tscn" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://drt8r0pwx31o" path="res://Scenes/coin.tscn" id="5_wowpa"]
-[ext_resource type="PackedScene" uid="uid://dbygp0oexe180" path="res://Scripts/slime_green.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://dbygp0oexe180" path="res://Scenes/slime_green.tscn" id="7_1l0tm"]
 [ext_resource type="FontFile" uid="uid://3rc3lct8dav0" path="res://Assets/fonts/PixelOperator8.ttf" id="8_v158k"]
 [ext_resource type="FontFile" uid="uid://cfaa5jt6gjeo5" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="9_ldgsr"]
 
@@ -306,14 +306,15 @@ autoplay = "move"
 [node name="Lables" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Lables"]
-offset_left = -32.0
-offset_top = 49.0
-offset_right = 54.0
-offset_bottom = 57.0
+offset_left = -66.0
+offset_top = 41.0
+offset_right = 56.0
+offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_v158k")
 theme_override_font_sizes/font_size = 8
-text = "Space to jump"
+text = "Space to jump
+\"A\" and \"D\" to move"
 
 [node name="Label2" type="Label" parent="Lables"]
 offset_left = 421.0
@@ -347,3 +348,15 @@ text = "You did it!"
 
 [node name="Slime Green" parent="." instance=ExtResource("7_1l0tm")]
 position = Vector2(624, 96)
+
+[node name="Coin" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(248, -9)
+
+[node name="Coin2" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(552, -90)
+
+[node name="Coin3" parent="." instance=ExtResource("5_wowpa")]
+position = Vector2(600, 89)
+
+[node name="Slime Green2" parent="." instance=ExtResource("7_1l0tm")]
+position = Vector2(167, 16)
