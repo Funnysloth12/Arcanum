@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://df334l5y1s1xq"]
 
-[ext_resource type="Script" uid="uid://c71p2u7w02p6m" path="res://Scenes/options.gd" id="1_prnvy"]
+[ext_resource type="Script" uid="uid://c71p2u7w02p6m" path="res://Scripts/options.gd" id="1_prnvy"]
 [ext_resource type="FontFile" uid="uid://3rc3lct8dav0" path="res://Assets/fonts/PixelOperator8.ttf" id="2_4tmxy"]
 
 [node name="Options" type="Control"]
