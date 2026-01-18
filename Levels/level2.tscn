@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bw8mnje2mxyxw"]
+[gd_scene load_steps=18 format=3 uid="uid://bw8mnje2mxyxw"]
 
+[ext_resource type="Script" uid="uid://bplycl7v2hefr" path="res://Scripts/level_2.gd" id="1_lr0ko"]
 [ext_resource type="Script" uid="uid://ceytoxk8kuw44" path="res://Scripts/game_manager.gd" id="1_tdxkx"]
 [ext_resource type="FontFile" uid="uid://cfaa5jt6gjeo5" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_1c22n"]
 [ext_resource type="Texture2D" uid="uid://b2fv0bvgk4i8u" path="res://Assets/sprites/world_tileset.png" id="3_ppd48"]
@@ -178,9 +179,6 @@ sources/0 = SubResource("TileSetAtlasSource_3dryh")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
 
-[sub_resource type="Animation" id="Animation_xv7eh"]
-resource_name = "new_animation"
-
 [sub_resource type="Animation" id="Animation_ijnin"]
 resource_name = "Plat1"
 length = 2.0
@@ -213,6 +211,9 @@ tracks/0/keys = {
 "values": [Vector2(137, 5)]
 }
 
+[sub_resource type="Animation" id="Animation_xv7eh"]
+resource_name = "new_animation"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tdxkx"]
 _data = {
 &"Plat1": SubResource("Animation_ijnin"),
@@ -220,8 +221,9 @@ _data = {
 &"new_animation": SubResource("Animation_xv7eh")
 }
 
-[node name="Game" type="Node2D"]
+[node name="Level2" type="Node2D"]
 position = Vector2(8, -1)
+script = ExtResource("1_lr0ko")
 
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -283,11 +285,11 @@ autoplay = "Plat1"
 
 [node name="Slimes" type="Node" parent="."]
 
+[node name="Slime Green" parent="Slimes" instance=ExtResource("10_dpe6j")]
+position = Vector2(560, -33)
+
 [node name="fade_transiton" parent="." instance=ExtResource("11_m8ou3")]
 offset_left = 3546.0
 offset_top = -1707.0
 offset_right = 6273.0
 offset_bottom = 37.0
-
-[node name="Slime Green" parent="." instance=ExtResource("10_dpe6j")]
-position = Vector2(552, -32)
