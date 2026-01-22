@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c4n0ap7g04w6q"]
 
 [ext_resource type="Texture2D" uid="uid://ckdyf4ammv21s" path="res://Assets/sprites/Dimensional_Portal.png" id="1_j20fm"]
-[ext_resource type="Script" uid="uid://cfusjaj8x31x1" path="res://Scenes/portal.gd" id="1_oi2tk"]
+[ext_resource type="Script" uid="uid://bvfejobjbhmrv" path="res://Scenes/portal.gd" id="1_oi2tk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi2tk"]
 atlas = ExtResource("1_j20fm")
@@ -70,6 +70,7 @@ position = Vector2(5, 0.5)
 shape = SubResource("RectangleShape2D_j20fm")
 
 [node name="DestnationPoint" type="Marker2D" parent="."]
+light_mask = 2
 position = Vector2(-115, -1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
